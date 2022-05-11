@@ -1,13 +1,10 @@
 package com.raisetech.javafull0504.controller;
 
-import java.util.List;
-
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.raisetech.javafull0504.mapper.PlayerMapper;
-import com.raisetech.javafull0504.entity.Player;
 
 
 // @RestController はJSONやXMLなどのAPI的なデータを返すようになる
