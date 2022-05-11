@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Chicago Bulls Players</title>
+        <!-- Thymeleaf による CSSファイルの読み込み この方式だと /resources/static 配下から呼び出したことになる-->
+        <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <header>
+            <h1>Chicago Bulls</h1>
+        </header>
+
+        <section th:each="player: ${playerNames}">
+            <P th:text="${player}">選手名を並べる</P>
+        </section>
+
+        <section>
+            <p><a href="/index">戻る</a></p>
+        </section>
+    </body>
+</html>

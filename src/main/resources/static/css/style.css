@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+body {
+    font: 14px/1.6 "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", Vardana, Arial, sans-serif;
+    margin: 0;
+    color: #313131;
+}
+
+/* transition は色替えなどに要する時間を設定し、一瞬ではなくモヤッと変わるようにしてくれる */
+a {
+    color: blue;
+    transition: all 0.5s;
+}
+
+a:visited {
+    color: blue;
+    transition: all 0.5s;
+}
+
+a:hover {
+    color: #F5A862;
+    transition: all 0.5s;
+}
+
+/* overflow はボックスの外側まで内容がはみ出てしまう場合にどうするかの指示　hidden は範囲までで切ってくれる */
+header {
+    display: block;
+    width: 60%;
+    margin-left: 20%;
+    overflow: hidden;
+}
+
+/* padding は要素の内側余白　margin は要素の外側余白を設定する
+   border-radius は角の丸み　letter-spacing は文字と文字の間
+   font-weight は文字の太さで400は普通程度
+   float は要素を横並びにしてくれる leftとすると左詰め */
+header h1 {
+    font-size:120%;
+    color: #313131;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border:1px solid #313131;
+    border-radius: 5px;
+    letter-spacing: 3px;
+    font-weight: 400;
+    float: left;
+}
+
+section {
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    overflow: hidden;
+}

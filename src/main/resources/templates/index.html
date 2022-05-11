@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-<html lang="jp" xmlns:th="http://www.thymeleaf.org">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <title>ULTRA SUPER AMAZING MARVELOUS BASKETBALL PLAYERS</title>
+        <!-- Thymeleaf による CSSファイルの読み込み この方式だと /resources/static 配下から呼び出したことになる-->
+        <link th:href="@{/css/style.css}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <h1>マイケル・ジョーダン</h1>
-        <P th:text="${jordan}">シカゴ・ブルズスリーピートの説明</P>
-        <p><a href="/players">偉大な選手たち</a></p>
-        <p><a href="/jordan">伝説のプレイヤー</a></p>
+        <header>
+            <h1>マイケル・ジョーダン</h1>
+        </header>
+        <section>
+            <!-- th:utext を使うと、変数内のタグがエスケープされずに適用される -->
+           <P th:utext="${jordan}">シカゴ・ブルズスリーピートの説明</P>
+        </section>
+        <section>
+            <p><a href="/players">偉大な選手たち</a></p>
+            <p><a href="/jordan">伝説のプレイヤー</a></p>
+        </section>
     </body>
 </html>

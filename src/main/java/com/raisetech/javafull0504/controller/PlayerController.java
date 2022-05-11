@@ -20,7 +20,7 @@ public class PlayerController {
 
     // [/players] にアクセスした時の実際の動作
     // GetMapping は以下を置き換えたアノテーションとなっているだけのもの
-    //@RequestMapping("/players", method = RequestMethod.GET)
+    // @RequestMapping("/players", method = RequestMethod.GET)
     @GetMapping("/players")
     public List<Player> players() {
         return playerMapper.findAll();
