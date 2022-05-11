@@ -31,7 +31,7 @@ Spring Boot + Thymeleaf + MyBatis による MySQL への接続とデータ取得
 
 | id | name | age | state |
 | - | - | - | - |
-| 1 | Mike Air Jordan | 59 | Brooklyn |
+| 1 | Air Jordan | 59 | Brooklyn |
 | 2 | Scotty Maurice Pippen Sr. | 56 | Arkansas |
 | 3 | Dennis Keith Rodman | 60 | New Jersey |
 | 4 | Toni Kukoc | 53 | Yugosravia:Split |
@@ -51,5 +51,5 @@ Spring Boot + Thymeleaf + MyBatis による MySQL への接続とデータ取得
 
  - `localhost:8080` , `localhost:8080/index` , `localhost:8080/index.html` にアクセスすると、2回めのスリーピートを達成した当時のシカゴ・ブルズに所属した伝説的選手であるマイケル・ジョーダンについての説明（Wikipediaの引用）が表示される
  - 選手一覧をクリックすると `/players` にアクセスし、 `players` テーブルの全ての情報（当時の一部選手の一覧）を取得・表示する
- - 「伝説の選手」を押すと `/jordan` にアクセスし、 `players` テーブルの id 1 に登録された選手の愛称が、ただひとつ表示される
+ - 「伝説の選手」を押すと `/jordan` にアクセスし、 `players` テーブルの id 1 に登録された選手の名前が、ただひとつ表示される
  - バスケットマンですから
