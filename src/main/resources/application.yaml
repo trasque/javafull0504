@@ -1,0 +1,11 @@
+# SpringBootを動かすための設定ファイル
+# 
+# ここでは、MyBatisを使ってデータベースにアクセスしたいので
+# アクセス先を設定する必要がある　MyBatisの依存関係を追加した場合はこれがないと動作しない
+# basketballplayers はテーブル名を指定している
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/basketballplayer
+    username: root
+    password: ubmycarrerasl15
+    driver-class-name: com.mysql.cj.jdbc.Driver
