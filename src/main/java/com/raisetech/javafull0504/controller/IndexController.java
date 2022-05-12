@@ -1,7 +1,7 @@
 package com.raisetech.javafull0504.controller;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import com.raisetech.javafull0504.entity.Player;
 import com.raisetech.javafull0504.mapper.PlayerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,16 +38,11 @@ public class IndexController {
 
     @RequestMapping("/chicagobulls")
     public String chicagobulls(Model model) {
-        // [players] テーブルから Player リストを入手
-        // Player リストから Player を取り出し getName() で名前のString を得る
-        // For文でコレを繰り返し、選手名のリスト List<String> playerNames を作成する
-        List<Player> bullsPlayerList = playerMapper.findAll();
-        Player bullsPlayer;
-        List<String> playerNames = new ArrayList<>();
-        for (int playercount = 0; playercount < bullsPlayerList.size(); playercount++) {
-            bullsPlayer = bullsPlayerList.get(playercount);
-            playerNames.add(bullsPlayer.getName());
-        }
+        List<String> playerNames = playerMapper.findAll()                       // Player のリスト（かたまり）を得られる
+                                               .stream()                        // Player たちをStream 化する
+                                               .map(Player::getName)            // map で各要素を変換する　ここでは Player から getName で得たString
+                                               .collect(Collectors.toList());   // 変換した各要素のStringをリストへまとめ　List<String>にする
+                                                                                // [Player::getName] は引数なしのメソッド参照という書き方
 
         // Thymeleaf 側で 選手名リストを使えるようにする
         model.addAttribute("playerNames", playerNames);
