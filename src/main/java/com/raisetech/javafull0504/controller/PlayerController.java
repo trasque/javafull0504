@@ -11,9 +11,13 @@ import com.raisetech.javafull0504.mapper.PlayerMapper;
 @RestController
 public class PlayerController {
     
-    // PlayerMapper.java でDIコンテナに登録された PlayerMapper クラスをここで呼び出せる？
+    private final PlayerMapper playerMapper;
+
+    // playerMapper.java で DIコンテナに登録された PlayerMapper インスタンスをここで受け取る？
     @Autowired
-    PlayerMapper playerMapper;
+    public PlayerController(PlayerMapper playerMapper) {
+        this.playerMapper = playerMapper;
+    }
 
     // [/players] にアクセスした時の実際の動作
     // GetMapping は以下を置き換えたアノテーションとなっているだけのもの
