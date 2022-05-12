@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @Autowired
-    PlayerMapper playerMapper;
+    private final PlayerMapper playerMapper;
+
+    @Autowired  //コンストラクタインジェクション
+    public IndexController(PlayerMapper playerMapper) {
+        this.playerMapper = playerMapper;
+    }
 
     //value に配列を入れると、複数のパスに同じ動作を一度に割り当てられる
     // """ で囲むとコード内で便宜的に文字列を改行できる（実際のデータとしては改行されない）
